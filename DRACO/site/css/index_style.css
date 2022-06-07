@@ -1,0 +1,24 @@
+section div{
+    width: 50%;
+    height: 85vh;
+    float: left;
+    
+}
+
+section div img{
+    width: 80%;
+    
+}
+
+section .left{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

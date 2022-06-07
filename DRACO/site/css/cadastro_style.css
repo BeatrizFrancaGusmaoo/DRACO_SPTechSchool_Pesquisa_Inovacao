@@ -1,0 +1,55 @@
+section{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section div{
+    width: 50%;
+    height: auto;
+    padding: 3rem;
+    border: 1px solid black ;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+section div form{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+section div form p{
+    font-size: calc(1rem + 1vw);
+    color: darkslategray;
+}
+
+section div form label{
+    font-size: calc(0.3rem + 1vw);
+    margin-top: 1vh;
+}
+
+section div form input{
+    width: 100%;
+    min-height: 5vh;
+    max-height: 5vh;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    margin-bottom: 2vh;
+}
+
+section div form input:active, input:focus{
+    width: 100%;
+    min-height: 5vh;
+    max-height: 5vh;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    margin-bottom: 2vh;
+}
