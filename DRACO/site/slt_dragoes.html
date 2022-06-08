@@ -7,10 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     <link rel="icon" href="images/logo/logo.png">
     <link rel="stylesheet" href="css/equal_components.css">
-    <link rel="stylesheet" href="css/cadastro_style.css">
+    <link rel="stylesheet" href="css/slt_dragoes_style.css">
     <title>DRACO | ESCOLHA</title>
-    <script src="js/cadastro_validacao.js"></script>
-    <script src="js/login_validacao.js"></script>
 </head>
 <body>
     <nav>
@@ -37,20 +35,78 @@
         </div>
     </nav>
     <section>
-        <div>
-            <p>Bem vindo de volta!</p>
-            <img src="images/banner/bluedragonflying.webp">
-            <form>
-                <p>Faça seu login:</p>
-                <label>E-mail:</label>
-                <input type="text" onkeyup="validar_email()" id="ipt_email">
-                <span id="msg_email"></span>
-                <label>Senha:</label>
-                <input type="password" id="ipt_senha" onkeyup="validar_senha()">
-                <label>Confirmar senha:</label>
-                <input type="password" onkeyup="validar_senha()" id="ipt_confirmar_senha">
-                <button>Entrar</button>
-            </form>
+        <div class="wrapper">
+            <div class="title">
+                    <p>Escolha seu dragão favorito</p>
+            </div>
+            <div class="container">
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_agua">
+                    <div class="option_inner agua">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Água</div>
+                    </div>
+                </label>
+
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_fogo">
+                    <div class="option_inner fogo">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Fogo</div>
+                    </div>
+                </label>
+
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_ar">
+                    <div class="option_inner ar">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Ar</div>
+                    </div>
+                </label>
+
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_terra">
+                    <div class="option_inner terra">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Terra</div>
+                    </div>
+                </label>
+
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_preto">
+                    <div class="option_inner preto">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Preto</div>
+                    </div>
+                </label>
+
+                <label class="option_item">
+                    <input type="checkbox" class="checkbox" id="dragao_branco">
+                    <div class="option_inner branco">
+                        <div class="tickmark"></div>
+                        <div class="icon">
+                            <img src="images/banner/image.png" width="100%">
+                        </div>
+                        <div class="name">Branco</div>
+                    </div>
+                </label>
+            </div>
+            <button>Ok</button>
         </div>
     </section>
     <footer></footer>
