@@ -3,7 +3,6 @@ body{
     margin: 0;
     font-family: 'Cinzel Decorative', cursive;
 }
-
 nav{
     background-color: white;
     width: 100%;
@@ -14,11 +13,9 @@ nav{
     box-shadow: 0 7px 25px rgb(0 0 0 / 30%);
     align-items: center;
 }
-
 nav img{
     height: 85%;
 }
-
 nav div{
     width: 50%;
     height: 100%;
@@ -26,7 +23,6 @@ nav div{
     justify-content: space-around;
     align-items: center;
 }
-
 nav ul{
     display: flex;
     text-align: center;
@@ -34,7 +30,6 @@ nav ul{
     padding: 0;
     width: 50%;
 }
-
 nav ul li{
     list-style: none;
     padding: 1rem;
@@ -43,16 +38,12 @@ nav ul li{
     color: black;
     font-size: calc(0.3rem + 1vw);
 }
-
 nav ul li:hover{
     box-shadow: 0 5px 6px -6px #222;
 }
-
 a{
     text-decoration: none;
 }
-
-
 textarea:focus, input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
