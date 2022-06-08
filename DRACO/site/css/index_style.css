@@ -1,5 +1,10 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 section div{
-    width: 50%;
     height: 85vh;
     float: left;
     
@@ -11,14 +16,45 @@ section div img{
 }
 
 section .left{
+    width: 40%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    font-size: calc(0.3rem + 1vw);
 }
 
 section .right{
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.left button{
+    margin-top: 8%;
+    padding: 1.2em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
