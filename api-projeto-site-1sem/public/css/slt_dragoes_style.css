@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 780px;
+    margin: 50px auto 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper .title{
+    font-size: 24px;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container .option_item{
+    display: block;
+    position: relative;
+    width: 175px;
+    height: 175px;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+.option_item .option_inner{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+    padding: 18px 10px;
+    cursor: pointer;
+    color: #585c68;
+    display: block;
+    border: 3px solid transparent;
+    position: relative;
+}
+
+.option_item .checkbox{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.option_item .option_inner .icon{
+    margin-bottom: 10px;
+}
+
+.option_item .option_inner .icon .img{
+
+}
+
+.option_item .option_inner .icon .name{
+    user-select: none;
+    font-size: 14px;
+}
+
+.option_item .checkbox:checked ~ .option_inner.agua{
+    border-color: cornflowerblue;
+    color: #585c68;
+}
+
+.option_item .checkbox:checked ~ .option_inner.ar{
+    border-color: grey;
+    color: #585c68;
+}
+
+.option_item .checkbox:checked ~ .option_inner.fogo{
+    border-color: darkred;
+    color: #585c68;
+}
+
+.option_item .checkbox:checked ~ .option_inner.terra{
+    border-color: saddlebrown;
+    color: #585c68;
+}
+
+.option_item .checkbox:checked ~ .option_inner.preto{
+    border-color: black;
+    color: #585c68;
+}
+
+.option_item .checkbox:checked ~ .option_inner.branco{
+    border-color: lavender;
+    color: #585c68;
+}
+
+.option_item .option_inner .tickmark{
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border: 20px solid;
+    border-color: #000 transparent transparent #000;
+    display: none;
+}
+
+.option_item .checkbox:checked ~ .option_inner .tickmark{
+    display: block;
+}
+
+.option_item .option_inner .tickmark:before{
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: -16px;
+    width: 15px;
+    height: 5px;
+    border: 3px solid red;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+}
+
+.option_item .option_inner.agua .tickmark{
+    border-color: cornflowerblue transparent transparent cornflowerblue;
+}
+
+.option_item .option_inner.ar .tickmark{
+    border-color: grey transparent transparent grey;
+}
+
+.option_item .option_inner.terra .tickmark{
+    border-color: saddlebrown transparent transparent saddlebrown;
+}
+
+.option_item .option_inner.fogo .tickmark{
+    border-color: darkred transparent transparent darkred;
+}
+
+.option_item .option_inner.preto .tickmark{
+    border-color: black transparent transparent black;
+}
+
+.option_item .option_inner.branco .tickmark{
+    border-color: lavender transparent transparent lavender;
+}
+
+button{
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 8%;
+    padding: 1.2em 3em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    background-color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+button:active {
+    transform: translateY(-1px);
+}
