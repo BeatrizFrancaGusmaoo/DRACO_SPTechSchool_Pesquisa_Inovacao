@@ -54,6 +54,11 @@ section div form input{
     margin-bottom: 2vh;
 }
 
+section div form a{
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
 section div form select{
     width: 100%;
     min-height: 5vh;
