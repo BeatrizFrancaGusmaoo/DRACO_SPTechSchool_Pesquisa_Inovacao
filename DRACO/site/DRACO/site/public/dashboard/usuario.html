@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo/logo.png">
+    <link rel="stylesheet" href="css/equal_components.css">
+    <link rel="stylesheet" href="css/index_style.css">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>DRACO | INÍCIO</title>
+</head>
+<body onload="puxarElemento()">
+    <nav>
+        <div>
+            <ul>
+                <a href="index.html">
+                    <li>Inicio</li>
+                </a>
+                <a href="sobre.html">
+                    <li>Sobre</li>
+                </a>
+            </ul>
+        </div>
+        <img src="images/logo/logo.png" alt="">
+        <div>
+            <ul>
+                <a href="login.html">
+                    <li>Entrar</li>
+                </a>
+                <a href="cadastro.html">
+                    <li>Cadastre-se</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <canvas id="myChart"></canvas>
+        <div class="grafico1"></div>
+    </section>
+    <footer></footer>
+</body>
+</html>
+
+<script>
+    var elemento1 = "";
+    var elemento2 = "";
+    var elemento3 = "";
+    var elemento4 = "";
+    var elemento5 = "";
+    var elemento6 = "";
+
+
+    var qnt_elemento1 = 0;
+    var qtd_elemento2 = 0;
+    var qtd_elemento3 = 0;
+    var qtd_elemento4 = 0;
+    var qtd_elemento5 = 0;
+    var qtd_elemento6 = 0;
+
+    window.onload = function(){
+        puxarElemento();
+    }
+
+    function puxarElemento() {
+
+        fetch("/usuarios/puxarElemento").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+
+                    qtd_elemento1 = resposta[0].qtdElemento;
+                    elemento1 = resposta[0].elemento;
+
+
+                    if (resposta[1]) {
+                        qtd_elemento2 = resposta[1].qtdElemento;
+                        elemento2 = resposta[1].elemento;
+                    }
+                    if (resposta[2]) {
+                        qtd_elemento3 = resposta[2].qtdElemento;
+                        elemento3 = resposta[2].elemento;
+                    }
+                    if (resposta[3]) {
+                        qtd_elemento4 = resposta[3].qtdElemento;
+                        elemento4 = resposta[3].elemento;
+                    }
+                    if (resposta[4]) {
+                        qtd_elemento5 = resposta[4].qtdElemento;
+                        elemento5 = resposta[4].elemento;
+                    }
+                    if (resposta[5]) {
+                        qtd_elemento6 = resposta[5].qtdElemento;
+                        elemento6 = resposta[5].elemento;
+                    }
+
+                    graficos1()
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+    function graficos1() {
+        const data = {
+            labels: [],
+            datasets: [{
+                label: 'Quantidade de votos',
+                data: [],
+                backgroundColor: [
+                    'rgba(255, 99, 132)',
+                    'rgba(255, 159, 64)',
+                    'rgba(255, 205, 86)',
+                    'rgba(75, 192, 192)',
+                    'rgba(54, 162, 235)',
+                    'rgba(153, 102, 255)',
+                    'rgba(201, 203, 207)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        data.labels.push(elemento1)
+        data.datasets[0].data.push(qtd_elemento1)
+
+        if (qtd_elemento2 > 0) {
+            data.labels.push(elemento2)
+            data.datasets[0].data.push(qtd_elemento2)
+        }
+        if (qtd_elemento3 > 0) {
+            data.labels.push(elemento3)
+            data.datasets[0].data.push(qtd_elemento3)
+        }
+        if (qtd_elemento4 > 0) {
+            data.labels.push(elemento4)
+            data.datasets[0].data.push(qtd_elemento4)
+        }
+        if (qtd_elemento5 > 0) {
+            data.labels.push(elemento5)
+            data.datasets[0].data.push(qtd_elemento5)
+        }
+        if (qtd_elemento6 > 0) {
+            data.labels.push(elemento6)
+            data.datasets[0].data.push(qtd_elemento6)
+        }
+
+        Chart.defaults.color = "#000000"
+
+
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: { 
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+    }
+    
+</script>

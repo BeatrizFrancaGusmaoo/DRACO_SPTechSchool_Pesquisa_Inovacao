@@ -1,0 +1,10 @@
+.wiki{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wiki img{
+    height: 40%;
+}
+
